@@ -5,7 +5,7 @@ The plan is to eventually develop Guacamole encoders/decoders for every programm
 - [x] C#
 - [x] Java
 - [x] JavaScript
-- [x] Bash
+- [x] Shell
 - [ ] Python
 - [ ] Ruby
 - [ ] Swift
