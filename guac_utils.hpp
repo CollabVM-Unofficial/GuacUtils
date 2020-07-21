@@ -49,7 +49,7 @@ std::string guac_encode(std::vector<std::string> not_encoded)
 		ret.append(std::to_string(part.length())).append(".").append(part).append(","); // appends <length>.<part>,
 	}
 	ret.erase(ret.length() - 1); // erase the last ,
-	ret.append(";");			 // finish the guac message with ;
+	ret.append(";"); // finish the guac message with ;
 	return ret;
 }
 
