@@ -1,6 +1,7 @@
 # GuacUtils
 The plan is to eventually develop Guacamole encoders/decoders for every programming language possible:
-- [ ] C/C++
+- [ ] C
+- [x] C++
 - [x] C#
 - [x] Java
 - [x] JavaScript
