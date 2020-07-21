@@ -17,7 +17,6 @@ Unless explicitly stated otherwise in the file, all files in this repository are
 ```
 Copyright 2020 CollabVM Unofficial
 
-
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
