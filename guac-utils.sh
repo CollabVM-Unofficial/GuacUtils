@@ -4,12 +4,9 @@
 # reads from function args
 # writes to stdout
 
-#!/bin/bash
-
-function guac_encode {
+function guac_encode() {
 	output=""
-	for i in "$@"
-	do
+	for i in "$@"; do
 		output="${output},${#i}.${i}"
 	done
 	echo "${output:1};"
@@ -20,20 +17,17 @@ function guac_encode {
 # chat
 # user
 # hello
-function guac_decode {
+function guac_decode() {
 	input=$@
 	output=""
 
 	number_part=""
 	text_part=""
 
-	for (( i=0; i<${#input}; i++ ))
-	do
-		if [[ ${input:i:1} =~ [0-9] ]] && [[ ${number_part:-1:1} != "." ]]
-		then
+	for ((i = 0; i < ${#input}; i++)); do
+		if [[ ${input:i:1} =~ [0-9] ]] && [[ ${number_part:-1:1} != "." ]]; then
 			number_part="${number_part}${input:i:1}"
-		elif [[ ${input:i:1} = "." ]] && [[ ${number_part:-1:1} != "." ]]
-		then
+		elif [[ ${input:i:1} = "." ]] && [[ ${number_part:-1:1} != "." ]]; then
 			number_part="${number_part}."
 		else
 			number_part=${number_part%?}
@@ -44,7 +38,7 @@ function guac_decode {
 			number_part=""
 			[[ ${input:i:1} = ";" ]] && break
 		fi
-	done <<< "$input"
+	done <<<"$input"
 	# or maybe echo?
 	printf "${output}"
 }
