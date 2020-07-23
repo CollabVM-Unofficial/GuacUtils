@@ -9,7 +9,7 @@ The plan is to eventually develop Guacamole encoders/decoders for every programm
 - [ ] Python
 - [ ] Ruby
 - [ ] Swift
-- [ ] AutoHotkey
+- [x] AutoHotKey
 
 More may be planned in the future...
 
