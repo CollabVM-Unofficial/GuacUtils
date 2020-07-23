@@ -1,5 +1,6 @@
 # GuacUtils
 The plan is to eventually develop Guacamole encoders/decoders for every programming language possible:
+- [x] AutoHotKey
 - [ ] C
 - [x] C++
 - [x] C#
@@ -9,7 +10,6 @@ The plan is to eventually develop Guacamole encoders/decoders for every programm
 - [ ] Python
 - [ ] Ruby
 - [ ] Swift
-- [x] AutoHotKey
 
 More may be planned in the future...
 
