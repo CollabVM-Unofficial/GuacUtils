@@ -1,4 +1,6 @@
 ; Credit: Kekero/LoveEevee
+chatcode := ["&", "&amp;", "'", "&#x27;", '"', "&quot;", "/", "&#x2F;", "<", "&lt;", ">", "&gt;"]
+
 encodetext(cypher) {
 	command := ""
 	loop cypher.length(){
