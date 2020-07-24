@@ -6,7 +6,7 @@ namespace Guac.Utils
 {
     public class GuacUtil
     {
-        static string EncodeGuac(params string[] cypher)
+        public static string EncodeGuac(params string[] cypher)
         {
             StringBuilder command = new StringBuilder("");
             for (int i = 0; i < cypher.Length; i++)
@@ -19,7 +19,7 @@ namespace Guac.Utils
             }
             return command.ToString();
         }
-        static string[] DecodeGuac(string str)
+        public static string[] DecodeGuac(string str)
         {
             int pos = -1;
             List<string> sections = new List<string>();
