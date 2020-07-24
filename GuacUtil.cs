@@ -2,45 +2,48 @@
 using System;
 using System.Text;
 
-class GuacUtil
+namespace Guac.Utils
 {
-    static string EncodeGuac(params string[] cypher)
+    public class GuacUtil
     {
-        StringBuilder command = new StringBuilder("");
-        for (int i = 0; i < cypher.Length; i++)
+        static string EncodeGuac(params string[] cypher)
         {
-            var current = cypher[i];
-            command.Append(current.Length.ToString());
-            command.Append('.');
-            command.Append(current);
-            command.Append(i < cypher.Length - 1 ? ',' : ';');
+            StringBuilder command = new StringBuilder("");
+            for (int i = 0; i < cypher.Length; i++)
+            {
+                var current = cypher[i];
+                command.Append(current.Length.ToString());
+                command.Append('.');
+                command.Append(current);
+                command.Append(i < cypher.Length - 1 ? ',' : ';');
+            }
+            return command.ToString();
         }
-        return command.ToString();
-    }
-    static string[] DecodeGuac(string str)
-    {
-        int pos = -1;
-        List<string> sections = new List<string>();
-
-        for (; ; )
+        static string[] DecodeGuac(string str)
         {
-            int len = str.IndexOf('.', pos + 1);
-            if (len == -1)
-                break;
+            int pos = -1;
+            List<string> sections = new List<string>();
 
-            pos = int.Parse(str.Substring(pos + 1, len - (pos + 1))) + len + 1;
-            StringBuilder repl = new StringBuilder(str.Substring(len + 1, pos - (len + 1)));
-            repl.Replace("&#x27;", "'")
-                .Replace("&quot;", "\"")
-                .Replace("&#x2F;", "/")
-                .Replace("&lt;", "<")
-                .Replace("&gt;", ">")
-                .Replace("&amp;", "&");
-            sections.Add(repl.ToString());
+            for (; ; )
+            {
+                int len = str.IndexOf('.', pos + 1);
+                if (len == -1)
+                    break;
 
-            if (str.Substring(pos, 1) == ";")
-                break;
+                pos = int.Parse(str.Substring(pos + 1, len - (pos + 1))) + len + 1;
+                StringBuilder repl = new StringBuilder(str.Substring(len + 1, pos - (len + 1)));
+                repl.Replace("&#x27;", "'")
+                    .Replace("&quot;", "\"")
+                    .Replace("&#x2F;", "/")
+                    .Replace("&lt;", "<")
+                    .Replace("&gt;", ">")
+                    .Replace("&amp;", "&");
+                sections.Add(repl.ToString());
+
+                if (str.Substring(pos, 1) == ";")
+                    break;
+            }
+            return sections.ToArray();
         }
-        return sections.ToArray();
     }
 }
