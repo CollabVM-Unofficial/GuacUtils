@@ -1,6 +1,6 @@
 ///pass in a properly formatted string and get a result (monad) of a list of strings or a returned error
 pub fn guac_decode(str: String) -> Result<Vec<String>, DecodeError> {
-    //If the input string is empty, return an empty list and don't waste any more CPU time
+    //If the input string is empty, return an empty list
     if str.is_empty() {
         return Ok(Vec::new());
     }
@@ -164,7 +164,7 @@ impl std::fmt::Debug for DecodeError {
     }
 }
 
-///test suite
+///extensive test suite
 #[cfg(test)]
 mod tests {
     //bring in all the above functions
