@@ -9,7 +9,7 @@ function guacEncode(cypher: Array<string>): string {
     let result = '';
     //combine all the modified strings
     for (let str of cypher) {
-        result.concat(`${str.length}.${str},`);
+        result = result.concat(`${str.length}.${str},`);
     }
 
     //replace the final comma with a semicolon
