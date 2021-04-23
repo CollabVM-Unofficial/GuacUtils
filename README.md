@@ -10,6 +10,7 @@ The plan is to eventually develop Guacamole encoders/decoders for every programm
 - [x] Shell
 - [x] Python
 - [ ] Ruby
+- [x] Rust
 - [ ] Swift
 
 More may be planned in the future...
