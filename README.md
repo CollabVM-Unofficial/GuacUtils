@@ -9,6 +9,7 @@ The plan is to eventually develop Guacamole encoders/decoders for every programm
 - [x] TypeScript
 - [x] Shell
 - [x] Python
+- [x] Julia
 - [ ] Ruby
 - [x] Rust
 - [ ] Swift
