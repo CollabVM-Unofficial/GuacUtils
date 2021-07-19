@@ -13,6 +13,7 @@ The plan is to eventually develop Guacamole encoders/decoders for every programm
 - [ ] Ruby
 - [x] Rust
 - [ ] Swift
+- [x] Go
 
 More may be planned in the future...
 
