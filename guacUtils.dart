@@ -50,7 +50,7 @@ List<String> guacDecode(String str)  {
         };
 
         //if that number is a real number, save it as a number type variable
-        int distance = int.tryParse(distStr)!;
+        int distance = int.tryParse(distStr);
 
         //increment the index
         idx += 1;
