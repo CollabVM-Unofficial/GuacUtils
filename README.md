@@ -4,6 +4,7 @@ The plan is to eventually develop Guacamole encoders/decoders for every programm
 - [ ] C
 - [x] C++
 - [x] C#
+- [x] Dart
 - [x] Java
 - [x] JavaScript
 - [x] TypeScript
