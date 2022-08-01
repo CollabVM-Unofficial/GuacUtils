@@ -8,13 +8,12 @@
 #include <stdlib.h>
 
 /**
- * Decodes a guac-encoded string.
- * this function is not safe!!! make sure your strings are terminated ;)
- * my first time dealing with dynamic memory management...
+ * valid syntax:
  *
- * char* encoded_str | C-style encoded string to decode
- * char** ret        | malloc'd (empty) char pointer array
- * int* reta         | pointer to an int, stores the amount of items in the array
+ * int reta;
+ * char* str = "5.penis,6.balls1;"; // this can be any proper guac string
+ * char** ret = NULL;
+ * ret = guac_decode(str, ret, &reta);
 **/
 char** guac_decode(char* encoded_str, char** ret, int* reta) {
 	char* _msg = calloc(strlen(encoded_str) + 1, sizeof(char));
@@ -48,9 +47,6 @@ char** guac_decode(char* encoded_str, char** ret, int* reta) {
 }
 
 /**
- * Encodes into guac format...
- * also uses strlen(), but the data in ret should be safe anyways
- *
  * char** ret | list of items to encode
  * int reta   | amount of items in list, returned by guac_decode
 **/
