@@ -12,7 +12,7 @@ The plan is to eventually develop Guacamole encoders/decoders for every programm
 - [x] Julia
 - [x] Rust
 - [x] Go
-- [ ] C
+- [x] C
 - [ ] Ruby
 - [ ] Swift
 
